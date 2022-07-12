@@ -11,4 +11,5 @@
     'powershell-yaml'           = 'latest'
     PSScriptAnalyzer            = 'latest'
     Pester                      = 'latest'
+    Az                          = 'latest'
 }
