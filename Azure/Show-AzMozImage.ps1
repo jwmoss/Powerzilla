@@ -1,15 +1,20 @@
 function Show-AzMozImageTag {
     [CmdletBinding()]
     param (
-
+        [Switch]
+        $PackerOnly
     )
 
     begin {
-
+        if ($PackerOnly) {
+            $splat = @{
+                ResourceGroupName = "rg-packer-through-cib"
+            }
+        }
     }
 
     process {
-        Get-AzImage | ForEach-Object {
+        Get-AzImage @splat | ForEach-Object {
             $tags = $_.Tags.GetEnumerator()
             $rg = $_.ResourceGroupName
             $name = $_.Name

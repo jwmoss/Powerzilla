@@ -1,0 +1,24 @@
+---
+version: 5
+defaults:
+  data_hash: yaml_data
+  datadir: data
+
+hierarchy:
+    # It is acceptable for dot notation facts (eg. %{facts.some_fact}) to not exist
+    # since they will simply return an empty string
+  - name: "Per-role data"
+    path: "roles/%{facts.puppet_role}.yaml"
+
+    # Windows doesn't have facts.puppet_role
+  - name: "Per-role Windows"
+    path: "roles/%{facts.custom_win_role}.yaml"
+
+  - name: "Per-OS defaults"
+    path: "os/%{facts.os.family}.yaml"
+
+  - name: "Secrets generated from Vault"
+    path: "secrets/vault.yaml"
+
+  - name: "Common data to all"
+    path: "common.yaml"

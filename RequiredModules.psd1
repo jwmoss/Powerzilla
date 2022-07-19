@@ -1,6 +1,6 @@
 @{
     # Set up a mini virtual environment...
-    PSDependOptions             = @{
+    PSDependOptions     = @{
         AddToPath  = $true
         Target     = 'Output\RequiredModules'
         Parameters = @{
@@ -8,8 +8,10 @@
         }
     }
 
-    'powershell-yaml'           = 'latest'
-    PSScriptAnalyzer            = 'latest'
-    Pester                      = 'latest'
-    Az                          = 'latest'
+    'powershell-yaml'   = 'latest'
+    PSScriptAnalyzer    = 'latest'
+    Pester              = 'latest'
+    Az                  = 'latest'
+    Ugit                = 'latest'
+    PowerShellForGithub = 'latest'
 }

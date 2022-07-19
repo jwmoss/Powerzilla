@@ -9,19 +9,13 @@ azure:
     build_location: eastus
     locations:
         - centralus
-        - northcentralus
-        #- southcentralus
-        #- eastus
-        #- eastus2
-        #- westus
-        #- westus2
-        #- northeurope
-        #- westeurope
+        - eastus
+
 vm:
     size: Standard_F8s_v2
     tags:
-        base_image: win10642004azure
-        worker_pool_id: win10-64-2004
+        base_image: win10642004azure ## change this
+        worker_pool_id: win10-64-2004 ## change this
         sourceOrganisation: mozilla-platform-ops
         sourceRepository: ronin_puppet
         sourceBranch: cloud_windows
